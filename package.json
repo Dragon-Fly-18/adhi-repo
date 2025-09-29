@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "build": "vite build",
+  "start": "vite preview --host 0.0.0.0 --port $PORT"
+},
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dragon-Fly-18/adhi-repo.git"
