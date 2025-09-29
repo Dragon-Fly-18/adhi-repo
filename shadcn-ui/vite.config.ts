@@ -1,22 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { viteSourceLocator } from "@metagptx/vite-plugin-source-locator";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-node'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  plugins: [
-    viteSourceLocator({
-      prefix: "mgx",
-    }),
-    react(),
-  ],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  server: {
-    port: 5173, // Explicitly define the port
-  },
-}));
+export default defineConfig({
+  plugins: [react()],
+  preview: {
+    host: '0.0.0.0', // bind to all interfaces
+    port: parseInt(process.env.PORT) || 4173,
+    strictPort: true,
+    allowedHosts: 'all' // allow your Render hostname
+  }
+})
