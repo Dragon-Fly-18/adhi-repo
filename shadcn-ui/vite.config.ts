@@ -7,7 +7,8 @@ export default defineConfig({
   base: '/',
   preview: {
     host: '0.0.0.0',
-    port: Number(import.meta.env.PORT) || 4173,
+    port: Number(process.env.PORT) || 4173,
+
     strictPort: true,
     allowedHosts: ['adhi-repo.onrender.com', 'localhost'],
   },
